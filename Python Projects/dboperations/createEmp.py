@@ -1,11 +1,11 @@
 import mysql.connector;
 
 def delete(id):
-    conn = mysql.connector.connect(host='localhost',database='mydb',user='root',password='test1234')
+    conn = mysql.connector.connect(host='192.168.0.187',database='Aftabtestdb',user='root',password='')
 
     if conn.is_connected():
-    print("Connected to mysql db")
-    cursor = conn.cursor()
+        print("Connected to mysql db")
+        cursor = conn.cursor()
 
     try:
         cursor.execute("delete from emp where id='%d'")
