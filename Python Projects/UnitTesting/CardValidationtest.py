@@ -7,6 +7,8 @@ class CardValidationtest(unittest.TestCase):
         results = validatecard(date(2022,2,22))
         self.assertEqual('Valid Card', results)
     def test_validatecard_expired(self):
-        results = validatecard(date(2021,2,22))
-        self.assertEqual('Invalid Card', results)
+        with self.assertRaises(RuntimeError):
+            validatecard(date(2020, 2, 22))
 
+if __name__=='__main__':
+    unittest.main()
